@@ -1,5 +1,3 @@
-import java.sql.SQLOutput;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -61,30 +59,8 @@ public class Main {
 
         //Bonus
         System.out.println("\nBonus");
-        System.out.println(
-                "*****************************\n" +
-                "Interval Workout STARTS !!!!\n" +
-                "*****************************"
-        );
-        for (int i = 1; i < 5; i++){
-            System.out.println(
-                    "=============================\n" +
-                    "ROUND " + i + ":\n" +
-                    allExercises[0].getName() + "\n" +
-                    allExercises[2].getName() + "\n" +
-                    allExercises[1].getName()
-            );
-            if(i < 4){
-                System.out.println(
-                        "=============================\n" +
-                        "DO THE BREAK (30 SECONDS)"
-                );
-            }
-        }
-        System.out.println(
-                "*****************************\n" +
-                "CONGRATS - YOU ARE DONE !!!\n" +
-                "*****************************"
-        );
+        Exercise[] interval1 = {allExercises[0], allExercises[2], allExercises[1]};
+        IntervalWorkout iw1 = new IntervalWorkout(interval1, 4, 30);
+        iw1.printIntervalWorkout();
     }
 }
